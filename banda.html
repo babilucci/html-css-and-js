@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Noto+Sans+Lepcha&family=Qwitcher+Grypen&family=Roboto&display=swap" rel="stylesheet">
+  <title>Abismo</title>
+  <style>
+    body {
+	 background-color: black;
+	 color: blanchedalmond;
+      text-align: center;
+	  font-family: 'Amatic SC', cursive;
+	  
+    
+
+    }
+    h1 {
+      font-size: 3em;
+	  color: rgb(239, 238, 252);
+    }
+    p {
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+	
+	
+	<img src="imagem.jpg" alt="">
+  <h1>FRASE " alguma coisa que o caio vai pedir p colocar</h1>
+  
+  <p id="countdown"></p>
+  <script>
+    // Define a data final para a contagem regressiva
+    var countDownDate = new Date("2023-04-14T23:59:59").getTime();
+
+    // Atualiza a contagem regressiva a cada segundo
+    var x = setInterval(function() {
+      // Obtem a data atual
+      var now = new Date().getTime();
+
+      // Calcula a diferença entre a data final e a data atual
+      var distance = countDownDate - now;
+
+      // Calcula os dias, horas, minutos e segundos restantes
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Formata a saída da contagem regressiva
+      var countdownOutput = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // Exibe a contagem regressiva na página
+      document.getElementById("countdown").innerHTML = countdownOutput;
+
+      // Se a contagem regressiva acabar, exibe uma mensagem
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Acesse <a href='https://www.youtube.com/' style='color: white;'>aqui</a>";
+
+  }
+    }, 1000);
+  </script>
+</body>
+</html>
